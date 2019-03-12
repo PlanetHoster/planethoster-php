@@ -2,6 +2,7 @@
 
 namespace PlanetHoster\Adapter;
 
+use PlanetHoster\Api;
 use PlanetHoster\Exception\HttpException;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -26,7 +27,7 @@ class GuzzleHttpAdapter implements AdapterInterface {
    * @param integer              $timeout
    * @param string               $base_url
    */
-  public function __construct($api_key, $api_user, $timeout = 10, $base_url = \PlanetHoster\PlanetHoster::DEFAULT_BASE_URL) {
+  public function __construct($api_key, $api_user, $timeout = 10, $base_url = Api::DEFAULT_ENDPOINT) {
     $this->client = new Client([
       'headers' => [
         'X-API-KEY' => $api_key,

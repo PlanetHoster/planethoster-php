@@ -2,12 +2,20 @@
 
 namespace PlanetHoster;
 
+use PlanetHoster\Adapter\AdapterInterface;
+
 class PlanetHoster {
 
   /**
-   * @var string
+   * @var AdapterInterface
    */
-  const DEFAULT_BASE_URL = 'https://api.planethoster.net';
+  protected $adapter;
 
-
+  /**
+   * @param AdapterInterface $adapter
+   */
+  public function __construct(AdapterInterface $adapter)
+  {
+      $this->adapter = $adapter;
+  }
 }
