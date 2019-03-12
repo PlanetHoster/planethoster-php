@@ -1,0 +1,13 @@
+{
+    "name": "planethoster/planethoster-api",
+    "description": "PHP library for PlanetHoster API",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "keywords": ["PlanetHoster", "API", "Domain", "Hosting"],
+    "homepage": "https://github.com/PlanetHoster/planethoster-php",
+    "require": {
+        "php": "^7.1.0",
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}

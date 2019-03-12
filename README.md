@@ -1,2 +1,2 @@
-# planethoster-php
+# PlanetHoster API
 PHP library for PlanetHoster API
