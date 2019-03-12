@@ -2,7 +2,7 @@
 
 namespace PlanetHoster\Adapter;
 
-interface AdapterInterface {
+interface Adapter {
 
   /**
    * @param string $uri

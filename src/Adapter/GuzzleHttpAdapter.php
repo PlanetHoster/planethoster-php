@@ -9,7 +9,7 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Response;
 
-class GuzzleHttpAdapter implements AdapterInterface {
+class GuzzleHttpAdapter implements Adapter {
 
   /**
    * @var ClientInterface

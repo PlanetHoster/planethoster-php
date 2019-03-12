@@ -2,19 +2,19 @@
 
 namespace PlanetHoster;
 
-use PlanetHoster\Adapter\AdapterInterface;
+use PlanetHoster\Adapter\Adapter;
 
 class PlanetHoster {
 
   /**
-   * @var AdapterInterface
+   * @var Adapter
    */
   protected $adapter;
 
   /**
-   * @param AdapterInterface $adapter
+   * @param Adapter $adapter
    */
-  public function __construct(AdapterInterface $adapter)
+  public function __construct(Adapter $adapter)
   {
       $this->adapter = $adapter;
   }
