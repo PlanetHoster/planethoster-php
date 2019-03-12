@@ -1,0 +1,13 @@
+<?php
+
+namespace PlanetHoster\Api;
+
+use PlanetHoster\Adapter\Adapter;
+
+class Account extends Api {
+
+  public function Info() {
+    $content = $this->adapter->get('/reseller-api/account-info');
+    return json_decode($content);
+  }
+}
