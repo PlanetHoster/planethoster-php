@@ -16,7 +16,7 @@ abstract class Api {
    */
   protected $adapter;
   
-  public function __constructor(Adapter $adapter) {
+  public function __construct(Adapter $adapter) {
     $this->adapter = $adapter;
   }
 }
