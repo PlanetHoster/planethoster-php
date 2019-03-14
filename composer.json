@@ -14,5 +14,8 @@
         "psr-4": {
             "PlanetHoster\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^5.1"
     }
 }
