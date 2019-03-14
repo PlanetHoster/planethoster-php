@@ -45,7 +45,7 @@ use PlanetHoster\Adapter\GuzzleHttpAdapter;
 use PlanetHoster\PlanetHoster;
 
 // create an adapter with api_user and api_key
-$adapter = new GuzzleHttpAdapter('you_api_user', 'your_api_key');
+$adapter = new GuzzleHttpAdapter('your_api_user', 'your_api_key');
 
 // create a PlanetHoster object
 $planethoster = new PlanetHoster($adapter);
