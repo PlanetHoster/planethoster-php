@@ -97,8 +97,8 @@ class GuzzleHttpAdapter implements Adapter {
   protected function handleError()
   {
       $body = (string) $this->response->getBody();
-      $code = (int) $this->response->getStatusCode();
       $content = json_decode($body);
-      throw new HttpException(isset($content->message) ? $content->message : 'Request not processed', $code);
+      $code = isset($content->error_code) ? $content->error_code : ((int) $this->response->getStatusCode());
+      throw new HttpException(isset($content->error) ? $content->error : 'Request not processed', $code);
   }
 }
