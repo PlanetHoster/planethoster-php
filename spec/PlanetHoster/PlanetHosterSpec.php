@@ -18,4 +18,19 @@ class PlanetHosterSpec extends ObjectBehavior
     {
         $this->shouldHaveType(PlanetHoster::class);
     }
+
+    function it_should_return_an_account_instance() 
+    {
+        $this->account()->shouldBeAnInstanceOf('PlanetHoster\Api\Account');
+    }
+
+    function it_should_return_a_domain_instance() 
+    {
+        $this->domain()->shouldBeAnInstanceOf('PlanetHoster\Api\Domain');
+    }
+
+    function it_should_return_a_world_instance() 
+    {
+        $this->world()->shouldBeAnInstanceOf('PlanetHoster\Api\World');
+    }
 }
