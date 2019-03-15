@@ -108,17 +108,19 @@ class Domain extends Api {
    * @param DomainContact $tech
    * @param DomainContact $billing
    * 
+   * @throws InvalidArgumentException
+   * 
    * @return stdClass
    */
-  public function SaveContactDetails($sld, $tld, DomainContact $registrant,
+  public function SaveContactDetails($sld, $tld, 
+      DomainContact $registrant = null,
       DomainContact $admin = null, 
       DomainContact $tech = null, 
       DomainContact $billing = null) {
-    $params = [
-      'sld' => $sld,
-      'tld' => $tld,
-    ];
-    $params = array_merge($params, $registrant->toArray('registrant'));
+    $params = [];
+    if($registrant !== null) {
+      $params = array_merge($params, $registrant->toArray('registrant'));
+    }
     if($admin !== null) {
       $params = array_merge($params, $admin->toArray('admin'));
     }
@@ -128,6 +130,15 @@ class Domain extends Api {
     if($billing !== null) {
       $params = array_merge($params, $billing->toArray('billing'));
     }
+
+    if(empty($params)) {
+      throw new InvalidArgumentException('require at least one of: registrant, admin, tech or billing');
+    }
+
+    $params = array_merge($params, [
+      'sld' => $sld,
+      'tld' => $tld,
+    ]);
 
     $content = $this->adapter->post($this->uri('save-contact-details'), $params);
     return json_decode($content);
