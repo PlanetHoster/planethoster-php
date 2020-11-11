@@ -20,11 +20,13 @@ class World extends Api {
    * @param integer $cpu
    * @param integer $mem
    * @param integer $io
+   * @param bool    $cpanel
+   * @param bool    $litespeed
    * @param string  $cms
    * 
    * @return stdClass
    */
-  public function Create($domain, $country, $cpu, $mem, $io, $cms = '') {
+  public function Create($domain, $country, $cpu, $mem, $io, $cpanel=true, $litespeed=false, $cms = '') {
     $content = $this->adapter->post($this->uri('create-account'), [
       'domain' => $domain,
       'country' => $country,
@@ -32,6 +34,8 @@ class World extends Api {
       'mem' => $mem,
       'io' => $io,
       'cms' => $cms,
+      'with_cpanel' => $cpanel ? 'true' : 'false',
+      'ls' => $litespeed ? 'true' : 'false'
     ]);
     return json_decode($content);
   }

@@ -27,7 +27,7 @@ class GuzzleHttpAdapter implements Adapter {
    * @param integer              $timeout
    * @param string               $base_url
    */
-  public function __construct($api_user, $api_key, $timeout = 10, $base_url = Api::DEFAULT_ENDPOINT, ClientInterface $client = null) {
+  public function __construct($api_user, $api_key, $timeout = 120, $base_url = Api::DEFAULT_ENDPOINT, ClientInterface $client = null) {
     $this->client = $client ?: new Client([
       'headers' => [
         'X-API-USER' => $api_user,
@@ -86,6 +86,9 @@ class GuzzleHttpAdapter implements Adapter {
       $this->response = $this->client->request($method, $uri, $options);
     } catch (RequestException $e) {
         $this->response = $e->getResponse();
+        if (is_null($this->response)) {
+          throw $e;
+        }
         $this->handleError();
     }
     return (string)$this->response->getBody();
