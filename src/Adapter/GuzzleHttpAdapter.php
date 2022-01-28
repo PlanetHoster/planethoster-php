@@ -24,14 +24,16 @@ class GuzzleHttpAdapter implements Adapter {
   /**
    * @param string               $api_user
    * @param string               $api_key
+   * @param string               $api_sandbox
    * @param integer              $timeout
    * @param string               $base_url
    */
-  public function __construct($api_user, $api_key, $timeout = 120, $base_url = Api::DEFAULT_ENDPOINT, ClientInterface $client = null) {
+  public function __construct($api_user, $api_key, $api_sandbox, $timeout = 120, $base_url = Api::DEFAULT_ENDPOINT, ClientInterface $client = null) {
     $this->client = $client ?: new Client([
       'headers' => [
         'X-API-USER' => $api_user,
         'X-API-KEY' => $api_key,
+        'X-API-SANDBOX' => $api_sandbox,
       ],
       'timeout' => $timeout,
       'base_uri' => $base_url
