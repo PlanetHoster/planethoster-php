@@ -6,6 +6,9 @@
     ":disableRateLimiting"
   ],
   "timezone": "America/Montreal",
+  "labels": [
+    "dependency"
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
