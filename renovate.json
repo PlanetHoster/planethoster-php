@@ -1,6 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    "schedule:daily",
+    ":disableRateLimiting"
+  ],
+  "timezone": "America/Montreal",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": [
+      "before 5am on monday"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchDepTypes": ["require-dev", "devDependencies"],
+      "matchPackagePatterns": ["phpspec/phpspec"],
+      "automerge": true
+    }
   ]
 }
