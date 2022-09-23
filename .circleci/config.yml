@@ -9,7 +9,8 @@ jobs:
       - image: cimg/php:<< parameters.php-version >>
     steps:
       - checkout
-      - run: php --version
+      - run: composer install --no-interaction --prefer-source
+      - run: php vendor/bin/phpspec run -fpretty
 
 workflows:
   phpspec-workflow:
