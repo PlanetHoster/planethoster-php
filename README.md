@@ -1,7 +1,7 @@
 # PlanetHoster API Client
 PHP library for [PlanetHoster API](https://apidoc.planethoster.com/)
 
-[![Build Status](https://app.travis-ci.com/PlanetHoster/planethoster-php.svg?branch=master)](https://app.travis-ci.com/PlanetHoster/planethoster-php)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/PlanetHoster/planethoster-php/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/PlanetHoster/planethoster-php/tree/master)
 [![Latest Stable Version](https://poser.pugx.org/planethoster/planethoster-api/v/stable)](https://packagist.org/packages/planethoster/planethoster-api)
 [![Total Downloads](https://poser.pugx.org/planethoster/planethoster-api/downloads)](https://packagist.org/packages/planethoster/planethoster-api)
 [![License](https://poser.pugx.org/planethoster/planethoster-api/license)](https://packagist.org/packages/planethoster/planethoster-api)
