@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  phpspec:
+    parameters:
+      php-version:
+        type: string
+    docker:
+      - image: cimg/php:<< parameters.php-version >>
+    steps:
+      - checkout
+      - run: composer install --no-interaction --prefer-source
+      - run: php vendor/bin/phpspec run -fpretty
+
+workflows:
+  phpspec-workflow:
+    jobs:
+      - phpspec:
+          matrix:
+            parameters:
+              php-version: ["7.3", "7.4", "8.0", "8.1"]

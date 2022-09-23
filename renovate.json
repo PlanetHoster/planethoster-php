@@ -4,8 +4,7 @@
     "config:base",
     "schedule:daily",
     ":disableRateLimiting",
-    ":automergePr",
-    ":skipStatusChecks"
+    ":automergePr"
   ],
   "timezone": "America/Montreal",
   "labels": [
