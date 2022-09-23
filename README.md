@@ -7,7 +7,7 @@ PHP library for [PlanetHoster API](https://apidoc.planethoster.com/)
 [![License](https://poser.pugx.org/planethoster/planethoster-api/license)](https://packagist.org/packages/planethoster/planethoster-api)
 
 ## Installation
-We recommend to install this library with [composer](https://getcomposer.org/). We support PHP 7.1 to 7.3.
+We recommend to install this library with [composer](https://getcomposer.org/).
 
 To install composer follow the [official documentation](https://getcomposer.org/doc/00-intro.md). The following command should also work:
 ```bash
