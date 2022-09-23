@@ -3,7 +3,8 @@
   "extends": [
     "config:base",
     "schedule:daily",
-    ":disableRateLimiting"
+    ":disableRateLimiting",
+    ":automergePr"
   ],
   "timezone": "America/Montreal",
   "labels": [
