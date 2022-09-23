@@ -5,6 +5,7 @@ version: 2.1
 parameters:
   php-version:
     type: string
+    default: "8"
 
 jobs:
   phpspec:
