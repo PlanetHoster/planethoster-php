@@ -63,4 +63,4 @@ $infos = $planethoster->account()->Info();
 [Please open an issue in github](https://github.com/PlanetHoster/planethoster-php/issues)
 
 ## Resources
-[PlanetHoster API documentation](https://apidoc.planethoster.com/)
+[PlanetHoster API documentation](https://apidoc.planethoster.com/)test
