@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d39a14f049a274febabf207727a606af",
+    "content-hash": "3439bd0280365948b3b228c2a9162c53",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -554,12 +554,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "2.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -932,16 +932,16 @@
         },
         {
             "name": "phpspec/phpspec",
-            "version": "7.5.0",
+            "version": "7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "3613651cd36306b5eb04c0e90d197feb68d5f351"
+                "reference": "107b1597cef2db4d81702e51d159afcfde1b1247"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/3613651cd36306b5eb04c0e90d197feb68d5f351",
-                "reference": "3613651cd36306b5eb04c0e90d197feb68d5f351",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/107b1597cef2db4d81702e51d159afcfde1b1247",
+                "reference": "107b1597cef2db4d81702e51d159afcfde1b1247",
                 "shasum": ""
             },
             "require": {
@@ -950,7 +950,7 @@
                 "php": "^7.3 || 8.0.* || 8.1.* || 8.2.* || 8.3.*",
                 "phpspec/php-diff": "^1.0.0",
                 "phpspec/prophecy": "^1.9",
-                "sebastian/exporter": "^3.0 || ^4.0 || ^5.0",
+                "sebastian/exporter": "^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
                 "symfony/console": "^3.4 || ^4.4 || ^5.0 || ^6.0 || ^7.0",
                 "symfony/event-dispatcher": "^3.4 || ^4.4 || ^5.0 || ^6.0 || ^7.0",
                 "symfony/finder": "^3.4 || ^4.4 || ^5.0 || ^6.0 || ^7.0",
@@ -962,7 +962,7 @@
             },
             "require-dev": {
                 "behat/behat": "^3.3",
-                "phpunit/phpunit": "^8.0 || ^9.0 || ^10.0",
+                "phpunit/phpunit": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
                 "symfony/filesystem": "^3.4 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
                 "vimeo/psalm": "^4.3 || ^5.2"
             },
@@ -1015,9 +1015,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/phpspec/issues",
-                "source": "https://github.com/phpspec/phpspec/tree/7.5.0"
+                "source": "https://github.com/phpspec/phpspec/tree/7.6.0"
             },
-            "time": "2024-01-19T14:20:56+00:00"
+            "time": "2025-05-03T10:03:36+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -1720,12 +1720,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "2.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -1865,8 +1865,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1941,8 +1941,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2019,8 +2019,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2103,8 +2103,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2177,8 +2177,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2253,8 +2253,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2402,12 +2402,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "2.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
