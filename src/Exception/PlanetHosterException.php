@@ -2,5 +2,4 @@
 
 namespace PlanetHoster\Exception;
 
-interface PlanetHosterException {
-}
+interface PlanetHosterException {}

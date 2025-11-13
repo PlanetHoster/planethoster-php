@@ -2,7 +2,8 @@
 
 namespace PlanetHoster\Entity;
 
-class DnsRecord extends Entity {
+class DnsRecord extends Entity
+{
 
   /**
    * @var string

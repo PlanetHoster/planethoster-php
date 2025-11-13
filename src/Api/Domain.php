@@ -6,12 +6,14 @@ use PlanetHoster\Adapter\Adapter;
 use PlanetHoster\Entity\DnsRecord;
 use PlanetHoster\Entity\DomainContact;
 
-class Domain extends Api {
+class Domain extends Api
+{
 
   /**
    * @return stdClass
    */
-  public function TldPrices() {
+  public function TldPrices()
+  {
     $content = $this->adapter->get($this->uri('tld-prices'));
     return json_decode($content);
   }
@@ -22,7 +24,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function CheckAvailability($sld, $tld) {
+  public function CheckAvailability($sld, $tld)
+  {
     $content = $this->adapter->get($this->uri('check-availability'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -36,7 +39,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function DomainInfo($sld, $tld) {
+  public function DomainInfo($sld, $tld)
+  {
     $content = $this->adapter->get($this->uri('domain-info'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -50,7 +54,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function GetContactDetails($sld, $tld) {
+  public function GetContactDetails($sld, $tld)
+  {
     $content = $this->adapter->get($this->uri('get-contact-details'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -64,7 +69,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function GetNameservers($sld, $tld) {
+  public function GetNameservers($sld, $tld)
+  {
     $content = $this->adapter->get($this->uri('get-nameservers'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -78,7 +84,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function GetPhDnsRecords($sld, $tld) {
+  public function GetPhDnsRecords($sld, $tld)
+  {
     $content = $this->adapter->get($this->uri('get-ph-dns-records'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -92,7 +99,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function GetRegistrarLock($sld, $tld) {
+  public function GetRegistrarLock($sld, $tld)
+  {
     $content = $this->adapter->get($this->uri('get-registrar-lock'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -112,27 +120,30 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function SaveContactDetails($sld, $tld, 
-      DomainContact $registrant = null,
-      DomainContact $admin = null, 
-      DomainContact $tech = null, 
-      DomainContact $billing = null) {
+  public function SaveContactDetails(
+    $sld,
+    $tld,
+    ?DomainContact $registrant = null,
+    ?DomainContact $admin = null,
+    ?DomainContact $tech = null,
+    ?DomainContact $billing = null
+  ) {
     $params = [];
-    if($registrant !== null) {
+    if ($registrant !== null) {
       $params = array_merge($params, $registrant->toArray('registrant'));
     }
-    if($admin !== null) {
+    if ($admin !== null) {
       $params = array_merge($params, $admin->toArray('admin'));
     }
-    if($tech !== null) {
+    if ($tech !== null) {
       $params = array_merge($params, $tech->toArray('tech'));
     }
-    if($billing !== null) {
+    if ($billing !== null) {
       $params = array_merge($params, $billing->toArray('billing'));
     }
 
-    if(empty($params)) {
-      throw new InvalidArgumentException('require at least one of: registrant, admin, tech or billing');
+    if (empty($params)) {
+      throw new \InvalidArgumentException('require at least one of: registrant, admin, tech or billing');
     }
 
     $params = array_merge($params, [
@@ -151,14 +162,15 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function SaveNameservers($sld, $tld, $nameservers) {
+  public function SaveNameservers($sld, $tld, $nameservers)
+  {
     $params = [
       'sld' => $sld,
       'tld' => $tld,
     ];
 
-    for($i = 0; $i < sizeof($nameservers); $i++) {
-      $params[sprintf("ns%d", $i+1)] = $nameservers[$i];
+    for ($i = 0; $i < sizeof($nameservers); $i++) {
+      $params[sprintf("ns%d", $i + 1)] = $nameservers[$i];
     }
 
     $content = $this->adapter->post($this->uri('save-nameservers'), $params);
@@ -172,7 +184,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function SavePhDnsRecords($sld, $tld, DnsRecord ...$records) {
+  public function SavePhDnsRecords($sld, $tld, DnsRecord ...$records)
+  {
     $params = [
       'sld' => $sld,
       'tld' => $tld,
@@ -195,7 +208,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function SaveRegistrarLock($sld, $tld, boolean $lock) {
+  public function SaveRegistrarLock($sld, $tld, bool $lock)
+  {
     $content = $this->adapter->post($this->uri('save-registrar-lock'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -210,7 +224,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function EmailEppCode($sld, $tld) {
+  public function EmailEppCode($sld, $tld)
+  {
     $content = $this->adapter->post($this->uri('email-epp-code'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -232,12 +247,18 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function RegisterDomain($sld, $tld, $period, $nameservers, DomainContact $registrant,
-      DomainContact $admin = null, 
-      DomainContact $tech = null, 
-      DomainContact $billing = null, 
-      $register_if_premium = false,
-      $addtl_fields = []) {
+  public function RegisterDomain(
+    $sld,
+    $tld,
+    $period,
+    $nameservers,
+    DomainContact $registrant,
+    DomainContact $admin = null,
+    DomainContact $tech = null,
+    DomainContact $billing = null,
+    $register_if_premium = false,
+    $addtl_fields = []
+  ) {
     $params = [
       'sld' => $sld,
       'tld' => $tld,
@@ -246,18 +267,18 @@ class Domain extends Api {
       'addtl_fields' => $addtl_fields,
     ];
 
-    for($i = 0; $i < sizeof($nameservers); $i++) {
-      $params[sprintf("ns%d", $i+1)] = $nameservers[$i];
+    for ($i = 0; $i < sizeof($nameservers); $i++) {
+      $params[sprintf("ns%d", $i + 1)] = $nameservers[$i];
     }
 
     $params = array_merge($params, $registrant->toArray('registrant'));
-    if($admin !== null) {
+    if ($admin !== null) {
       $params = array_merge($params, $admin->toArray('admin'));
     }
-    if($tech !== null) {
+    if ($tech !== null) {
       $params = array_merge($params, $tech->toArray('tech'));
     }
-    if($billing !== null) {
+    if ($billing !== null) {
       $params = array_merge($params, $billing->toArray('billing'));
     }
 
@@ -272,7 +293,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function RenewDomain($sld, $tld, $period) {
+  public function RenewDomain($sld, $tld, $period)
+  {
     $content = $this->adapter->post($this->uri('renew-domain'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -288,7 +310,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function TransferDomain($sld, $tld, $epp_code) {
+  public function TransferDomain($sld, $tld, $epp_code)
+  {
     $content = $this->adapter->post($this->uri('transfer-domain'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -303,7 +326,8 @@ class Domain extends Api {
    * 
    * @return stdClass
    */
-  public function DeletePhDnsZone($sld, $tld) {
+  public function DeletePhDnsZone($sld, $tld)
+  {
     $content = $this->adapter->post($this->uri('delete-ph-dns-zone'), [
       'sld' => $sld,
       'tld' => $tld,
@@ -316,7 +340,8 @@ class Domain extends Api {
    * 
    * @return string
    */
-  protected function uri($path) {
+  protected function uri($path)
+  {
     return sprintf("/reseller-api/%s", $path);
   }
 }

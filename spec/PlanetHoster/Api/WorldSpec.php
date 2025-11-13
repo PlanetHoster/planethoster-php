@@ -5,12 +5,11 @@ namespace spec\PlanetHoster\Api;
 use PlanetHoster\Api\World;
 use PlanetHoster\Adapter\Adapter;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class WorldSpec extends ObjectBehavior
 {
 
-    function let(Adapter $adapter) 
+    function let(Adapter $adapter)
     {
         $this->beConstructedWith($adapter);
     }
@@ -20,7 +19,7 @@ class WorldSpec extends ObjectBehavior
         $this->shouldHaveType(World::class);
     }
 
-    function it_should_return_accounts(Adapter $adapter) 
+    function it_should_return_accounts(Adapter $adapter)
     {
         $adapter->get('/world-api/get-accounts')
             ->willReturn('
@@ -35,7 +34,7 @@ class WorldSpec extends ObjectBehavior
             "reseller_id":"a1b2c3"
          }
         ');
-        
+
         $accounts = $this->GetAccounts();
         $accounts->shouldReturnAnInstanceOf('stdClass');
         $accounts->world_accounts->shouldBeArray();

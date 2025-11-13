@@ -4,16 +4,18 @@ namespace PlanetHoster\Api;
 
 use PlanetHoster\Adapter\Adapter;
 
-class World extends Api {
+class World extends Api
+{
 
   /**
    * @return stdClass
    */
-  public function GetAccounts() {
+  public function GetAccounts()
+  {
     $content = $this->adapter->get($this->uri('get-accounts'));
     return json_decode($content);
   }
-  
+
   /**
    * @param string  $domain
    * @param string  $country
@@ -26,7 +28,8 @@ class World extends Api {
    * 
    * @return stdClass
    */
-  public function Create($domain, $country, $cpu, $mem, $io, $cpanel=true, $litespeed=false, $cms = '') {
+  public function Create($domain, $country, $cpu, $mem, $io, $cpanel = true, $litespeed = false, $cms = '')
+  {
     $content = $this->adapter->post($this->uri('create-account'), [
       'domain' => $domain,
       'country' => $country,
@@ -46,7 +49,8 @@ class World extends Api {
    * 
    * @return stdClass
    */
-  public function Suspend($id, $reason) {
+  public function Suspend($id, $reason)
+  {
     $content = $this->adapter->post($this->uri('suspend-account'), [
       'id' => $id,
       'reason' => $reason,
@@ -59,7 +63,8 @@ class World extends Api {
    * 
    * @return stdClass
    */
-  public function Unsuspend($id) {
+  public function Unsuspend($id)
+  {
     $content = $this->adapter->post($this->uri('unsuspend-account'), [
       'id' => $id,
     ]);
@@ -74,7 +79,8 @@ class World extends Api {
    * 
    * @return stdClass
    */
-  public function ModifyRessources($id, $cpu, $mem, $io) {
+  public function ModifyRessources($id, $cpu, $mem, $io)
+  {
     $content = $this->adapter->post($this->uri('modify-ressources'), [
       'id' => $id,
       'cpu' => $cpu,
@@ -83,7 +89,7 @@ class World extends Api {
     ]);
     return json_decode($content);
   }
-  
+
 
   /**
    * @param integer $cpu
@@ -92,7 +98,8 @@ class World extends Api {
    * 
    * @return stdClass
    */
-  public function UpgradePlan($cpu, $mem, $io) {
+  public function UpgradePlan($cpu, $mem, $io)
+  {
     $content = $this->adapter->post($this->uri('upgrade-plan'), [
       'cpu' => $cpu,
       'mem' => $mem,
@@ -106,7 +113,8 @@ class World extends Api {
    * 
    * @return string
    */
-  protected function uri($path) {
+  protected function uri($path)
+  {
     return sprintf("/world-api/%s", $path);
   }
 }
