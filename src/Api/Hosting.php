@@ -2,9 +2,9 @@
 
 namespace PlanetHoster\Api;
 
-use PlanetHoster\Adapter\Adapter;
+use PlanetHoster\Api\Hosting\Emails;
 
-class World extends Api
+class Hosting extends Api
 {
 
   /**
@@ -116,5 +116,13 @@ class World extends Api
   protected function uri($path)
   {
     return sprintf("/world-api/%s", $path);
+  }
+
+  /**
+   * @return Email
+   */
+  public function emails()
+  {
+    return new Emails($this->adapter);
   }
 }

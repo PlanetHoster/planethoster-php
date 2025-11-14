@@ -2,11 +2,11 @@
 
 namespace spec\PlanetHoster\Api;
 
-use PlanetHoster\Api\World;
+use PlanetHoster\Api\Hosting;
 use PlanetHoster\Adapter\Adapter;
 use PhpSpec\ObjectBehavior;
 
-class WorldSpec extends ObjectBehavior
+class HostingSpec extends ObjectBehavior
 {
 
     function let(Adapter $adapter)
@@ -16,7 +16,7 @@ class WorldSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(World::class);
+        $this->shouldHaveType(Hosting::class);
     }
 
     function it_should_return_accounts(Adapter $adapter)

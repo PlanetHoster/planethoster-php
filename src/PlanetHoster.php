@@ -5,8 +5,7 @@ namespace PlanetHoster;
 use PlanetHoster\Adapter\Adapter;
 use PlanetHoster\Api\Account;
 use PlanetHoster\Api\Domain;
-use PlanetHoster\Api\World;
-use PlanetHoster\Api\Hosting\Emails;
+use PlanetHoster\Api\Hosting;
 
 class PlanetHoster
 {
@@ -41,18 +40,10 @@ class PlanetHoster
   }
 
   /**
-   * @return World
+   * @return Hosting
    */
-  public function world()
+  public function hosting()
   {
-    return new World($this->adapter);
-  }
-
-  /**
-   * @return Email
-   */
-  public function emails()
-  {
-    return new Emails($this->adapter);
+    return new Hosting($this->adapter);
   }
 }

@@ -10,8 +10,8 @@ abstract class Api
   /**
    * @var string
    */
-  // const DEFAULT_ENDPOINT = 'https://api.planethoster.net';
-  const DEFAULT_ENDPOINT = 'http://reseller-api-staging.planethoster.net';
+  const DEFAULT_ENDPOINT = 'https://api.planethoster.net';
+  // const DEFAULT_ENDPOINT = 'http://reseller-api-staging.planethoster.net';
 
   /**
    * @var Adapter

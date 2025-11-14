@@ -29,8 +29,8 @@ class PlanetHosterSpec extends ObjectBehavior
         $this->domain()->shouldBeAnInstanceOf('PlanetHoster\Api\Domain');
     }
 
-    function it_should_return_a_world_instance()
+    function it_should_return_a_hosting_instance()
     {
-        $this->world()->shouldBeAnInstanceOf('PlanetHoster\Api\World');
+        $this->hosting()->shouldBeAnInstanceOf('PlanetHoster\Api\Hosting');
     }
 }
