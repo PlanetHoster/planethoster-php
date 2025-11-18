@@ -5,9 +5,10 @@ namespace PlanetHoster;
 use PlanetHoster\Adapter\Adapter;
 use PlanetHoster\Api\Account;
 use PlanetHoster\Api\Domain;
-use PlanetHoster\Api\World;
+use PlanetHoster\Api\Hosting;
 
-class PlanetHoster {
+class PlanetHoster
+{
 
   /**
    * @var Adapter
@@ -17,28 +18,32 @@ class PlanetHoster {
   /**
    * @param Adapter $adapter
    */
-  public function __construct(Adapter $adapter) {
-      $this->adapter = $adapter;
+  public function __construct(Adapter $adapter)
+  {
+    $this->adapter = $adapter;
   }
 
   /**
    * @return Account
    */
-  public function account() {
+  public function account()
+  {
     return new Account($this->adapter);
   }
 
   /**
    * @return Domain
    */
-  public function domain() {
+  public function domain()
+  {
     return new Domain($this->adapter);
   }
 
   /**
-   * @return World
+   * @return Hosting
    */
-  public function world() {
-    return new World($this->adapter);
+  public function hosting()
+  {
+    return new Hosting($this->adapter);
   }
 }

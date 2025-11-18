@@ -2,6 +2,4 @@
 
 namespace PlanetHoster\Exception;
 
-class HttpException extends \RuntimeException implements PlanetHosterException {
-  
-}
+class HttpException extends \RuntimeException implements PlanetHosterException {}

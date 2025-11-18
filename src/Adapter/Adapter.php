@@ -2,7 +2,8 @@
 
 namespace PlanetHoster\Adapter;
 
-interface Adapter {
+interface Adapter
+{
 
   /**
    * @param string $uri
@@ -10,7 +11,7 @@ interface Adapter {
    *
    * @throws HttpException
    *
-   * @return string
+   * @return stdClass|string
    */
   public function get($uri, $params = '');
 
@@ -32,6 +33,16 @@ interface Adapter {
    *
    * @return string
    */
+  public function patch($uri, $content = '');
+
+  /**
+   * @param string $uri
+   * @param array|string $params
+   *
+   * @throws HttpException
+   *
+   * @return string
+   */
   public function put($uri, $content = '');
 
   /**
@@ -43,5 +54,4 @@ interface Adapter {
    * @return string
    */
   public function post($uri, $content = '');
-
 }

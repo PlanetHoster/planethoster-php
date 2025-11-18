@@ -3,7 +3,8 @@
 namespace PlanetHoster\Entity;
 
 
-abstract class Entity {
+abstract class Entity
+{
 
   /**
    * @param string $prefix
@@ -11,7 +12,8 @@ abstract class Entity {
    * 
    * @return array
    */
-  public function toArray($prefix = '', $suffix = '') {
+  public function toArray($prefix = '', $suffix = '')
+  {
     $arr = [];
     $called = get_called_class();
     $reflection = new \ReflectionClass($called);
@@ -33,7 +35,8 @@ abstract class Entity {
    *
    * @return string
    */
-  protected static function parameterize($str) {
-    return strtolower(implode('_', preg_split('/(?=[A-Z])/', $str, NULL, PREG_SPLIT_NO_EMPTY)));
+  protected static function parameterize($str)
+  {
+    return strtolower(implode('_', preg_split('/(?=[A-Z])/', $str, -1, PREG_SPLIT_NO_EMPTY)));
   }
 }

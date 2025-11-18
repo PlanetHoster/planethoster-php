@@ -5,12 +5,11 @@ namespace spec\PlanetHoster\Api;
 use PlanetHoster\Api\Domain;
 use PlanetHoster\Adapter\Adapter;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class DomainSpec extends ObjectBehavior
 {
 
-    function let(Adapter $adapter) 
+    function let(Adapter $adapter)
     {
         $this->beConstructedWith($adapter);
     }
