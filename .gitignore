@@ -1,2 +1,4 @@
 /vendor/
 .dev.test.php
+.DS_STORE
+test.php
