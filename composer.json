@@ -8,7 +8,7 @@
     "homepage": "https://github.com/PlanetHoster/planethoster-php",
     "require": {
         "php": "^7.3 || ^8.0",
-        "guzzlehttp/guzzle": "~7.8.0"
+        "guzzlehttp/guzzle": "~7.10.0"
     },
     "config": {
         "platform": {
